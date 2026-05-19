@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Realtime Feed Application - Frontend
+Tech Stack Used
+Next.js 16.2.6 (App Router)
 
-## Getting Started
+React 19.2.4
 
-First, run the development server:
+TypeScript
 
-```bash
+Tailwind CSS v4 (Styling)
+
+Axios (API calls)
+
+Socket.IO Client (Real-time updates)
+
+Project Structure
+text
+frontend/
+├── src/app/
+│   ├── page.tsx           # Home page - displays all feeds
+│   ├── admin/page.tsx     # Admin panel - add new feeds
+│   ├── layout.tsx         # Root layout with navbar
+│   ├── components/
+│   │   └── Navbar.tsx     # Navigation component
+│   └── globals.css        # Global styles
+├── src/services/
+│   ├── api.ts             # Axios configuration
+│   └── socket.ts          # Socket.IO client
+└── package.json
+How to Use
+View Feeds (Home Page)
+Navigate to http://localhost:3000
+
+All feeds appear in reverse chronological order
+
+New feeds arrive automatically (no page refresh needed)
+
+Add New Feed (Admin Panel)
+Click "Admin" in navbar or go to http://localhost:3000/admin
+
+Enter title and message
+
+Click "Add Feed" button
+
+Feed appears instantly on home page for all users
+
+How to Run
+bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Build for production
+npm run build
+npm start
+Backend Connection
+API URL: http://localhost:5000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+WebSocket URL: http://localhost:5000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Make sure backend server is running before starting frontend
 
-## Learn More
+Key Features
+Real-time feed updates via WebSocket
 
-To learn more about Next.js, take a look at the following resources:
+Responsive design (works on mobile/tablet/desktop)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Form validation and loading states
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Auto-refresh on new feed submission

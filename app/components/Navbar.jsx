@@ -1,19 +1,3 @@
-// "use client";
-
-// import Link from "next/link";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="bg-black text-white p-4 flex gap-6">
-//       <Link href="/">Home</Link>
-
-//       <Link href="/admin">Admin</Link>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
 "use client";
 
 import Link from "next/link";
